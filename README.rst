@@ -23,11 +23,15 @@ Quick install for debian/ubuntu like linux distributions.
     $ mkdir build && cd build
     $ cmake ..
     $ make
+    $ cd ..
+    $ make install-shared INSTALL_PATH=/usr
+    If you don't like the system wide installation, or you don't have the permissions, it is possible to set the following environment variables. These varialbes are picked up by the compiler, linker and loader
     $ export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:`pwd`/../include
     $ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:`pwd`
     $ export LIBRARY_PATH=${LIBRARY_PATH}:`pwd`
+    $ cd -
+    $ make install
 
-    $ cd ../
     $ apt-get install python-virtualenv python-dev
     $ virtualenv pyrocks_test
     $ cd pyrocks_test
